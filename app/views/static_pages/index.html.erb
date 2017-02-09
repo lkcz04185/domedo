@@ -1,11 +1,14 @@
 <section class="todoapp">
   <header class="header">
     <h1>todos</h1>
+    <form id="new-form">
+      <input type="text" class="new-todo" />
+    </form>
+    
   </header>
 
   <section class="main">
     <ul class="todo-list">
-
         
     </ul>
   </section>
@@ -13,6 +16,15 @@
 
 <script>
   $(function(){
+
+    $('#new-form').submit (function(event) {
+      event.preventDefault();
+      var newTask = $('.new-todo')
+      newTaskValue = newTask.val()
+      console.log(newTaskValue);
+    });
+    
+
     // The taskHtml method takes in a JavaScript representation
     // of the task and produces an HTML representation using
     // <li> tags
@@ -46,8 +58,7 @@
 
       var ulTodo = $(".todo-list");
       ulTodo.html(htmlString);
-      $('.toggle').change(toggleTask)      
-       
+      $('.toggle').change(toggleTask)    
       });
     });
   
