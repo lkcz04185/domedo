@@ -19,9 +19,15 @@
 
     $('#new-form').submit (function(event) {
       event.preventDefault();
-      var newTask = $('.new-todo')
-      newTaskValue = newTask.val()
-      console.log(newTaskValue);
+      var textbox = $('.new-todo')
+      var payload = {
+        task: {
+          title: textbox.val()
+        }
+      };
+      $.post ("/tasks/", payload).success(function(data) {
+        console.log("Successfull HTTP request")
+      });  
     });
     
 
