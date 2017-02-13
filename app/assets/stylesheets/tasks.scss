@@ -355,7 +355,7 @@ html .clear-completed:active {
   Can't use it globally since it destroys checkboxes in Firefox
 */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-  .toggle-all,
+  .toggle-all
   .todo-list li .toggle {
     background: none;
   }
